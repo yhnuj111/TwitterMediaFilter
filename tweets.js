@@ -10,7 +10,7 @@ async function searchTweet(name) {
     let params = {screen_name: name, count: 100};
     return new Promise((resolve, reject) => {client.get('statuses/user_timeline', params, async function(error, tweets, response) {
         let ans = (JSON.parse(JSON.stringify(tweets)));
-        // console.log(ans);
+        console.log(ans);
         if (!error) {
             resolve({status: 200, msg: ans});
         } else {
@@ -23,6 +23,5 @@ async function searchTweet(name) {
 
 
 module.exports = {
-    getTweet,
     searchTweet
 }
